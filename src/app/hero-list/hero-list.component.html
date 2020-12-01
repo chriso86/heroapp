@@ -1,0 +1,9 @@
+<form ngForm="">
+  <input type="text" id="heroName" name="heroName" />
+
+  <button (click)="addHero()"> Add </button>
+</form>
+
+<ul>
+  <li *ngFor="let hero of heroes">{{hero}}</li>
+</ul>
