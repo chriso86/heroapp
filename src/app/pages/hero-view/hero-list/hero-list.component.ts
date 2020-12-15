@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HeroService} from '../../core/hero/hero.service';
+import {HeroService} from '../../../core/hero/hero.service';
+import {HeroModel} from '../../../core/hero/hero.model';
 
 @Component({
   selector: 'app-hero-list',
@@ -14,9 +15,8 @@ export class HeroListComponent implements OnInit {
   }
 
   addHero(): void {
-    this.heroService.addHero({
-      name: this.heroName,
-      shouldDisplay: true
-    });
+    this.heroService.addHero(
+      new HeroModel(this.heroName)
+    );
   }
 }

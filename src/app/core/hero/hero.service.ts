@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
+import {HeroModel} from './hero.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
-  public heroes: {name: string, shouldDisplay: boolean}[] = [
-    {name: 'Iron man', shouldDisplay: true},
-    {name: 'Captain America', shouldDisplay: true},
-    {name: 'Spiderman', shouldDisplay: false}
+  public heroes: HeroModel[] = [
+    new HeroModel('Iron man'),
+    new HeroModel('Captain America'),
+    new HeroModel('Spiderman', false)
   ];
 
   constructor() { }

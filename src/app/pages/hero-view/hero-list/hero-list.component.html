@@ -5,9 +5,8 @@
 </form>
 
 <ul>
-  <ng-container *ngFor="let hero of heroService.heroes">
-    <li *ngIf="hero.shouldDisplay">
-      <app-hero [heroObject]="hero"></app-hero>
+    <li *ngFor="let hero of heroService.heroes">
+      <app-hero-list-item [heroItem]="hero">
+      </app-hero-list-item>
     </li>
-  </ng-container>
 </ul>
