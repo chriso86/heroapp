@@ -1,0 +1,13 @@
+<form ngForm="">
+  <input [(ngModel)]="heroName" type="text" id="heroName" name="heroName" />
+
+  <button (click)="addHero()"> Add </button>
+</form>
+
+<ul>
+  <ng-container *ngFor="let hero of heroService.heroes">
+    <li *ngIf="hero.shouldDisplay">
+      <app-hero [heroObject]="hero"></app-hero>
+    </li>
+  </ng-container>
+</ul>
